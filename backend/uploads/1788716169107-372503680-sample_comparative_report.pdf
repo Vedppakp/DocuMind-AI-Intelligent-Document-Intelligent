@@ -1,0 +1,93 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 714 >>
+stream
+BT
+/F1 12 Tf
+50 720 Td
+16 TL
+(Technical Whitepaper: Model Fine-Tuning vs RAG Architecture) Tj T*
+(Author: Enterprise Document Intelligence Group) Tj T*
+() Tj T*
+(Executive Overview:) Tj T*
+(Fine-tuning adjusts internal neural network weights, whereas RAG provides an external,) Tj T*
+(dynamic non-parametric memory store without model retraining.) Tj T*
+(For rapidly evolving enterprise documents, RAG is 20x more cost-effective than continuous fine-tuning.) Tj T*
+() Tj T*
+(Section 1: Data Freshness and Cost Analysis) Tj T*
+(Fine-tuning costs approximately $450 to $1,800 per training run on specialized clusters.) Tj T*
+(In contrast, vector ingestion with DocuMind costs less than $0.002 per document.) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 582 >>
+stream
+BT
+/F1 12 Tf
+50 720 Td
+16 TL
+(Section 2: Hallucination Rates and Verifiability) Tj T*
+(Fine-tuned models still hallucinate in 18% of domain-specific edge cases because facts) Tj T*
+(are stored implicitly in weight distributions.) Tj T*
+(RAG solves this by forcing the model to cite exact source excerpts and page numbers.) Tj T*
+() Tj T*
+(Contrasting Perspective on Page 2:) Tj T*
+(While fine-tuning is superior for teaching specific linguistic styles or strict code formats,) Tj T*
+(RAG is the undisputed standard for document discovery, compliance, and factual research.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 528 >>
+stream
+BT
+/F1 12 Tf
+50 720 Td
+16 TL
+(Section 3: Hybrid Deployment Guidelines) Tj T*
+(The ideal enterprise architecture combines a fast, compact foundation model \(such as) Tj T*
+(gemini-2.5-flash\) with dynamic RAG vector indexing.) Tj T*
+() Tj T*
+(Operational Conclusions:) Tj T*
+(1. Use RAG for real-time document search, Q&A, and policy adherence.) Tj T*
+(2. Avoid static fine-tuning when source PDFs change weekly or monthly.) Tj T*
+(3. Enable multi-document comparative indexing to detect discrepancies across contracts.) Tj T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f
+0000000010 00000 n
+0000000062 00000 n
+0000000134 00000 n
+0000000263 00000 n
+0000001034 00000 n
+0000001163 00000 n
+0000001802 00000 n
+0000001931 00000 n
+0000002516 00000 n
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+2589
+%%EOF

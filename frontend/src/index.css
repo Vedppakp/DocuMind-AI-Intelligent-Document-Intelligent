@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: normal;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.01em;
+    word-spacing: 0.02em;
+  }
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(51, 65, 85, 0.6);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(71, 85, 105, 0.9);
+}
+
+/* Markdown prose enhancements in chat */
+.prose-documind {
+  color: #e2e8f0;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.prose-documind p {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  font-size: 0.875rem;
+}
+
+.prose-documind strong {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.prose-documind h1, .prose-documind h2, .prose-documind h3 {
+  font-weight: 700;
+  color: #f8fafc;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-documind h1 { font-size: 1.25rem; }
+.prose-documind h2 { font-size: 1.125rem; }
+.prose-documind h3 { font-size: 1rem; }
+
+.prose-documind ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-documind ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-documind li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+.prose-documind code {
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  background-color: #1e293b;
+  color: #7dd3fc;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.prose-documind pre {
+  background-color: #090d16;
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+  margin-bottom: 0.75rem;
+}
+
+.prose-documind blockquote {
+  border-left: 4px solid #0284c7;
+  padding-left: 0.875rem;
+  font-style: italic;
+  color: #cbd5e1;
+  background-color: rgba(30, 41, 59, 0.4);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Citation pill badge styling */
+.citation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+.citation-pill:hover {
+  background-color: rgba(14, 165, 233, 0.3);
+  border-color: #38bdf8;
+  color: #bae6fd;
+  transform: translateY(-1px);
+}
