@@ -30,7 +30,7 @@ import {
 import { marked } from 'marked';
 import { useDocument } from '../context/DocumentContext';
 import { useAuth } from '../context/AuthContext';
-import { chatApi, toolApi } from '../services/api';
+import { chatApi, toolApi, documentApi } from '../services/api';
 import { cleanDocumentTitle, getDocumentFileType } from '../utils/documentUtils';
 
 marked.setOptions({
@@ -333,7 +333,7 @@ export default function ChatInterface() {
 
   const splitDoc = documents.find((d) => d._id === splitDocId) || activeDocument;
   const splitMaxPages = splitDoc?.pageCount || 100;
-  const splitPdfUrl = splitDocId ? `/api/documents/${splitDocId}/pdf#page=${splitPage}` : '';
+  const splitPdfUrl = splitDocId ? documentApi.getPdfUrl(splitDocId, splitPage) : '';
 
   // Empty state when no documents are uploaded
   if (documents.length === 0) {

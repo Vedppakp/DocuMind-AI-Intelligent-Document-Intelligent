@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { useDocument } from '../context/DocumentContext';
 import { cleanDocumentTitle } from '../utils/documentUtils';
+import { documentApi } from '../services/api';
 
 export default function PdfDocumentViewerModal() {
   const {
@@ -59,7 +60,7 @@ export default function PdfDocumentViewerModal() {
 
   const doc = documents.find((d) => d._id === activePdfViewer.documentId);
   const maxPages = doc?.pageCount || 100;
-  const pdfUrl = `/api/documents/${activePdfViewer.documentId}/pdf#page=${currentPage}`;
+  const pdfUrl = documentApi.getPdfUrl(activePdfViewer.documentId, currentPage);
 
   const handlePrevPage = () => {
     setCurrentPage((prev) => Math.max(1, prev - 1));

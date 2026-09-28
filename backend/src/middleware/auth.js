@@ -1,7 +1,14 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'documind-super-secret-jwt-key-2026';
+const JWT_SECRET = process.env.JWT_SECRET || (
+  process.env.NODE_ENV === 'production'
+    ? (() => {
+        console.warn('⚠️ [SECURITY WARNING] JWT_SECRET is unset in production! Please define JWT_SECRET in environment variables.');
+        return 'documind-prod-fallback-please-configure-env';
+      })()
+    : 'documind-local-dev-jwt-secret-key-2026'
+);
 
 /**
  * Authentication middleware.

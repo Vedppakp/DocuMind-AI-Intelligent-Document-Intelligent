@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+// Resolve backend API URL:
+// 1. If VITE_API_URL is configured (e.g., https://YOUR-BACKEND-URL in production), use it.
+// 2. If unset or in development, fall back to '/api' (proxied via Vite dev server to localhost:5000).
+const envApiUrl = (import.meta.env.VITE_API_URL || '').trim().replace(/\/+$/, '');
+export const API_BASE_URL = envApiUrl
+  ? (envApiUrl.endsWith('/api') ? envApiUrl : `${envApiUrl}/api`)
+  : '/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -61,7 +69,7 @@ export const documentApi = {
   delete: (id) => api.delete(`/documents/${id}`),
   updateFolder: (id, folder) => api.patch(`/documents/${id}/folder`, { folder }),
   getFolders: () => api.get('/documents/folders/list'),
-  getPdfUrl: (id, page) => `/api/documents/${id}/pdf${page ? `#page=${page}` : ''}`,
+  getPdfUrl: (id, page) => `${API_BASE_URL}/documents/${id}/pdf${page ? `#page=${page}` : ''}`,
   loadSample: () => api.post('/documents/load-sample'),
 };
 
